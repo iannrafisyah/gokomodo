@@ -1,0 +1,13 @@
+env: development # | production
+appURL: ""
+postgres:
+  username: postgres
+  password: postgres
+  sslMode: disable
+  host: db
+  port: 5432
+  dbName: gokomodo
+auth:
+  expireAccessToken: 3d
+  expireRefreshToken: 6d
+  secret: secret

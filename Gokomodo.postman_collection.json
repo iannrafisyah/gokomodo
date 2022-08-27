@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "32002f73-ead4-4fbd-a505-d0ecbaf75a71",
+		"name": "Gokomodo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "912227"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Email\":\"seller@mail.com\",\n    \"Password\":\"secret\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "List Product Seller",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInV1aWQiOiJhNDQ4OGRmNy03OTBiLTRmYTMtYTAyNi1jZjk5M2VhZWJmOGUifSwiZXhwIjoxNjYxODg1NDU1LCJpYXQiOjE2NjE2MjYyNTV9.5nBNQ90oJYquCvc3C0zVcM9t_ROY44zvxPuJBtvjysA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8081/v1/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product Seller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInV1aWQiOiI5ZjYyNGQ5ZC02NjZjLTRiZWQtODczMy01ZmIwOGJhOTJhZDIifSwiZXhwIjoxNjYxODA3NzY3LCJpYXQiOjE2NjE1NDg1Njd9.Y1ztm1FPefIuw-OFrzxA-N_2ZA8ZqLh4LjlMOKLjVEs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\":\"Pupuk Kompos\",\n    \"Description\":\"pupuk\",\n    \"Price\":10000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/v1/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Product Buyer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIsInV1aWQiOiI5MzRlYWEyYi0wM2U2LTRjYzktYjljNi01OTgwYzQ3M2JkNGYifSwiZXhwIjoxNjYxODAwMzM2LCJpYXQiOjE2NjE1NDExMzZ9.r9E0ZQyN624ifqf1CL6zuySBZZMrWts6tC_zy-6i0uI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8081/v1/product/list?seller=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "seller",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create Order Seller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIsInV1aWQiOiIzMjcxZmY4ZC1mNDIzLTQ3ODMtOGU0YS1jZDMzNzJmNTYxMGYifSwiZXhwIjoxNjYxODAzODc4LCJpYXQiOjE2NjE1NDQ2Nzh9.VvUiNx2in-26v0T8MxXDefyGUX43CgRRiaIDhXlyPWs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"SellerID\":1,\n    \"Items\":[1,2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/v1/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Order Buyer & Seller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInV1aWQiOiI0ZWU1YWNkNy0wN2IzLTRhMWItODRmYS1mMWYzYzc0Njg3NGYifSwiZXhwIjoxNjYxODA4MzU1LCJpYXQiOjE2NjE1NDkxNTV9.0s1J71BEnY-8afkwmJP0APhhRhLnC__wbKUIXtp9f5I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/v1/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept Order Seller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjEsInV1aWQiOiIzY2M3YmM0ZS0xM2QwLTQ1ZjYtYTU3My1kMDJhNTI5NmNhMDEifSwiZXhwIjoxNjYxODM5Nzc0LCJpYXQiOjE2NjE1ODA1NzR9.kWuX_AIMx-X4QZO9fo9cRpNwPNmPpNVECL90oQJjZRY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"TransactionID\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/v1/transaction/accept",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"transaction",
+								"accept"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
